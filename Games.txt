@@ -1,0 +1,310 @@
+DS$Emulator$Mobile$PC$PS2$PS3$PS4$PS5$Wii
+Diablo II Resurrected$Playing$PC$-
+Divinity: Original Sin 2$Playing$PC$-
+Guardians of the Galaxy$Playing$PC$-
+Pokemon Unite$Playing$Mobile$-
+Ratchet & Clank speedrunning$Playing$PS3$-
+Xenogears$Playing$PS3$-
+FFX-2$Soon$PS3$-
+Metal Gear Solid 3: Snake Eater$Soon$PS3$-
+Blue Fire$To do$PC$-
+Borderlands 2$To do$PC$-
+Breath of Fire IV$To do$PS3$-
+Celeste$To do$PC$-
+Children of Morta$To do$PC$-
+Chrono Trigger$To do$PC$-
+Cuphead$To do$PC$-
+Digimon World DS$To do$Emulator$-
+Dishonored DE$To do$PC$-
+Dragon's Dogma: Dark Arisen$To do$PC$7.5
+Drakengard$To do$PS2$-
+Drakengard 3$To do$PS3$-
+FFXII$To do$PS2$-
+FFXIII$To do$PS3$-
+FFXIII-2$To do$PC$-
+FFXIII: Lightning Returns$To do$PC$-
+Final Fantasy Tactics$To do$PS3$-
+Ghost of Tsushima$To do$PS5$-
+Going Under$To do$PC$-
+Guacamelee 2$To do$PC$-
+Hollow Knight: Silksong$To do$PC$-
+Into the Breach$To do$PC$-
+Jak & Daxter$To do$PS3$-
+Jak 2$To do$PS3$-
+Jak 3$To do$PS3$-
+Kingdom Hearts 2 Final Mix$To do$PS3$8.5
+Metal Gear Rising: Revengeance$To do$PC$-
+Metal Gear Solid 4: Guns of the Patriots$To do$PS3$-
+Metal Gear Solid: Peace Walker$To do$PS3$-
+Monster Hunter: World$To do$PC$-
+Moon RPG$To do$PC$-
+Narita Boy$To do$PC$-
+Night in the Woods$To do$PC$-
+Nioh$To do$PC$-
+Planescape: Torment$To do$PC$-
+Prey$To do$PC$-
+Ratchet & Clank: A Crack in Time$To do$PS3$8.5
+Ratchet & Clank: Quest for Booty$To do$PS3$-
+Ratchet & Clank: Tools of Destruction$To do$PS3$7.0
+Scott Pilgrim vs. the World the Game$To do$PC$-
+Superliminal$To do$PC$-
+Tabletop Simulator$To do$PC$-
+Trine$To do$PC$-
+Trine 2$To do$PC$-
+Trine 3$To do$PC$-
+Witcher$To do$PC$6.0
+Witcher 2$To do$PC$-
+Witcher 3$To do$PC$-
+Black Myth: Wukong$To get$PC$-
+Coromon$To get$PC$-
+Death's Door$To get$PC$-
+Demon's Souls Remake$To get$PS5$-
+Elden Ring$To get$PC$-
+FFVII Remake$To get$PS5$-
+Final Fantasy Tactics Advance$To get$Emulator$-
+Horizon Forbidden West$To get$PS5$-
+KartRider: Drift$To get$PC$-
+Kena: Bridge of Spirits$To get$PC$-
+The Legend of Zelda: Breath of the Wild$To get$Emulator$-
+NieR Replicant sqrt(2)$To get$PC$-
+A Plague Tale: Requiem$To get$PC$-
+Pyre$To get$PC$-
+Ratchet & Clank: Rift Apart$To get$PS5$-
+AER Memories of Old$Consider$PC$-
+Anuchard$Consider$PC$-
+Avatar: Frontiers of Pandora$Consider$PC$-
+Beyond Good and Evil 2$Consider$PC$-
+Creature in the Well$Consider$PC$-
+CrossCode$Consider$PC$-
+Cyberpunk 2077$Consider$PC$-
+Darkest Dungeon$Consider$PC$-
+Digimon Survive$Consider$PC$-
+Digimon World RE:Digitize$Consider$Emulator$-
+Digimon World: Next Order$Consider$PS5$-
+Dorfromantik$Consider$PC$-
+Enslaved: Odyssey to the West$Consider$PC$-
+Frogsong$Consider$PC$-
+Fuga: Melodies of Steel$Consider$PC$-
+The Gecko Gods$Consider$PC$-
+GigaBash$Consider$PC$-
+God of War 2$Consider$PS3$-
+Gothic$Consider$PC$-
+Granblue Fantasy Relink$Consider$PC$-
+GRIME$Consider$PC$-
+Have a Nice Death$Consider$PC$-
+Here Comes Niko$Consider$PC$-
+HITMAN$Consider$PC$-
+Just Cause 4$Consider$PC$-
+Lost Odyssey$Consider$Emulator$-
+MediEvil Remake$Consider$PS4$-
+Metal Slug Tactics$Consider$PC$-
+Metro Last Night Redux$Consider$PC$-
+Omno$Consider$PC$-
+Palia$Consider$PC$-
+Pit People$Consider$PC$-
+Pokemon MD: Blue Rescue Team$Consider$Emulator$-
+Psychonauts 2$Consider$PC$-
+The Rabbit and the Owl$Consider$PC$-
+Raji: an Ancient Epic deluxe or whatever$Consider$PC$-
+Remnant: From the Ashes$Consider$PC$-
+Replaced$Consider$PC$-
+STAR WARS: Battlefront II$Consider$PC$-
+Steins; Gate$Consider$PS3$-
+Super Magbot$Consider$PC$-
+Super Mario RPG$Consider$Emulator$-
+The Talos Principle$Consider$PC$-
+The Textorcist$Consider$PC$-
+Torchlight II$Consider$PC$-
+Totemic$Consider$PC$-
+Tunic$Consider$PC$-
+Tyranny$Consider$PC$-
+Yoku's Island Express$Consider$PC$-
+Broforce$Multiplayer$PC$8.0
+Can't Drive This$Multiplayer$PC$6.5
+Castle Crashers$Multiplayer$PC$8.0
+Civilization V$Multiplayer$PC$8.0
+Civilization VI$Multiplayer$PC$8.0
+Crawl$Multiplayer$PC$-
+CS:GO$Multiplayer$PC$7.0
+Deep Rock Galactic$Multiplayer$PC$7.0
+Don't Starve Together$Multiplayer$PC$8.5
+Duck Game$Multiplayer$PC$8.0
+GTA Online$Multiplayer$PC$9.0
+Heroes of Might & Magic 3$Multiplayer$PC$8.5
+League of Legends$Multiplayer$PC$-
+Lovers in Dangerous Time Space$Multiplayer$PC$-
+Mashed: Fully Loaded$Multiplayer$PS2$8.0
+Minecraft$Multiplayer$PC$8.5
+Mordhau$Multiplayer$PC$7.0
+Overcooked$Multiplayer$PC$-
+Portal 2$Multiplayer$PC$9.0
+Rocket League$Multiplayer$PC$8.0
+Sanctum 2$Multiplayer$PC$-
+Sonic All Stars Racing Transformed$Multiplayer$PC$8.0
+Speedrunners$Multiplayer$PC$8.0
+Team Fortress 2$Multiplayer$PC$7.5
+TowerFall Ascension$Multiplayer$PC$-
+Tricky Towers$Multiplayer$PC$7.0
+Ultimate Chicken Horse$Multiplayer$PC$-
+Among Us$Done$PC$7.0
+Antichamber$Done$PC$7.5
+ARK: Survival Evolved$Done$PC$6.5
+Assassin's Creed$Done$PC$8.0
+Bastion$Done$PC$8.5
+Battleblock Theater$Done$PC$7.0
+Besiege$Done$PC$7.0
+Beyond Good and Evil$Done$PS3$8.5
+Beyond Two Souls$Done$PS3$9.0
+The Binding of Isaac: Rebirth$Done$PC$8.5
+Bioshock$Done$PC$8.0
+Bioshock Infinite$Done$PC$8.0
+Black Mesa$Done$PC$8.0
+Blade and Soul$Done$PC$-
+Braid$Done$PC$8.0
+Cave Story$Done$PC$7.5
+Chaos on Deponia$Done$PC$7.0
+Control$Done$PC$8.0
+Crypt of the Necrodancer$Done$PC$6.0
+Dark Messiah of Might & Magic$Done$PC$7.0
+Dark Souls$Done$PC$8.5
+Dark Souls II$Done$PC$8.0
+Dark Souls III$Done$PC$8.5
+Deponia$Done$PC$6.0
+Diablo III$Done$PC$6.0
+Digimon World$Done$PS3$8.0
+Digimon World 4$Done$PS3$2.0
+Divinity: Original Sin$Done$PC$9.0
+Dungeon Maker: Dark Lord$Done$Mobile$8.0
+Dust: An Elysian Tail$Done$PC$9.0
+Dweller's Empty Path$Done$PC$8.0
+Earthbound$Done$Emulator$7.0
+Enter the Gungeon$Done$PC$6.0
+Fall Guys$Done$PC$7.5
+FFI$Done$Emulator$5.5
+FFII$Done$Emulator$6.0
+FFIII$Done$PC$5.5
+FFIV$Done$PC$6.0
+FFIX$Done$PS3$8.5
+FFV$Done$Emulator$5.5
+FFVI$Done$Emulator$5.5
+FFVII$Done$PC$6.0
+FFX$Done$PS3$6.0
+FFXIV$Done$PC$7.5
+Furi$Done$PC$8.0
+Goat Simulator$Done$PC$6.0
+God of War$Done$PS3$7.0
+Goodbye Deponia$Done$PC$7.0
+Granblue Fantasy$Done$Mobile$7.0
+Guacamelee$Done$PC$9.0
+Guild Wars 2$Done$PC$7.5
+Hades$Done$PC$8.0
+A Hat in Time$Done$PC$7.0
+Heart & Slash$Done$PC$7.0
+Hearthstone$Done$PC$6.0
+Helltaker$Done$PC$8.0
+Hollow Knight$Done$PC$9.0
+Horizon Zero Dawn$Done$PS4$9.0
+Hunie Pop$Done$PC$5.0
+Hylics$Done$PC$7.0
+Hyper Light Drifter$Done$PC$7.5
+Ico$Done$PS3$6.5
+ISLANDERS$Done$PC$8.0
+KartRider: Rush+$Done$Mobile$6.5
+Katamari Damacy$Done$Emulator$8.0
+Katana Zero$Done$PC$7.0
+Kingdom Hearts$Done$PS2$7.5
+Kingdom Hearts 3$Done$PS4$7.5
+Kingdom Hearts Re: Chain of Memories$Done$PS3$5.5
+Kingdom Hearts: BBS Fragmentary Passage$Done$PS4$7.5
+Kingdom Hearts: Birth by Sleep FM$Done$PS3$8.5
+Kingdom Hearts: Dream Drop Distance$Done$PS3$8.0
+Kingdom Hearts: Unchained X$Done$Mobile$4.0
+The Last Guardian$Done$PS4$7.0
+The Legend of Zelda: Ocarina of Time$Done$Emulator$5.0
+The Legend of Zelda: Twilight Princess$Done$Wii$6.5
+LitteBigPlanet 2$Done$PS3$7.5
+Mark of the Ninja$Done$PC$7.5
+Metal Gear$Done$PS3$6.0
+Metal Gear 2: Solid Snake$Done$PS3$7.0
+Metal Gear Solid$Done$PS3$8.5
+Metal Gear Solid 2: Sons of Liberty$Done$PS3$8.0
+Mission in Snowdriftland$Done$PC$6.0
+Montaro$Done$PC$7.0
+NieR$Done$PS3$8.0
+NieR: Automata$Done$PC$8.5
+Nosgoth$Done$PC$7.5
+Octodad: Dadliest Catch$Done$PC$8.5
+Ori and the Blind Forest: DE$Done$PC$10.0
+Ori and the Will of the Wisp$Done$PC$9.5
+Owlboy$Done$PC$7.0
+Payday 2$Done$PC$6.0
+A Plague Tale: Innocence$Done$PC$7.0
+Pokemon MD: Explorers of Sky$Done$DS$8.5
+Pony Island$Done$PC$7.0
+Portal$Done$PC$8.5
+Psychonauts$Done$PC$7.0
+Puzzle Agent$Done$PC$7.0
+Ratchet & Clank$Done$PS3$8.0
+Ratchet & Clank 2$Done$PS3$7.0
+Ratchet & Clank 3$Done$PS3$7.0
+Ratchet & Clank: Gladiator$Done$PS2$6.0
+Ratchet & Clank: Into the Nexus$Done$PS3$8.0
+Rayman Legends$Done$PS3$8.0
+Rogue Legacy$Done$PC$6.5
+Runescape$Done$PC$4.0
+Runescape Chronicles$Done$PC$6.0
+The Secret of Monkey Island$Done$PC$5.0
+Sekiro: Shadows Die Twice$Done$PC$9.0
+Shadow of the Colossus$Done$PS3$8.5
+Shelter 2$Done$PC$6.0
+A Short Hike$Done$PC$8.5
+Shovel Knight$Done$PC$8.0
+Sly 3$Done$PS2$7.0
+Snake Pass$Done$PC$8.0
+South Park: The Stick of Truth$Done$PC$8.5
+Spyro the Dragon$Done$PS3$7.0
+Spyro: Ripro's Rage$Done$PS3$6.5
+Spyro: Year of the Dragon$Done$PS3$6.5
+Stories: The Path of Destinies$Done$PS4$8.0
+Sundered beta$Done$PC$4.0
+Superhot$Done$PC$8.0
+The Surge 2$Done$PC$8.5
+SURVEY PROGRAM$Done$PC$8.0
+Tokyo Jungle$Done$PS3$8.0
+Tom Clancy's Rainbow Six$Done$PC$6.5
+Trackmania 2: Canyon$Done$PC$6.5
+Undertale$Done$PC$10.0
+Unworthy$Done$PC$8.0
+Urban Trial Freestyle$Done$PC$6.0
+Va-11 Hall-A$Done$PC$8.5
+Vagrant Story$Done$PS3$8.5
+Warlock: Master of the Arcane$Done$PC$7.0
+Baba is You$Dropped$PC$6.0
+Bloodborne$Dropped$PS4$7.0
+Bravely Default$Dropped$Emulator$-
+Carto$Dropped$PC$-
+Child of Light$Dropped$PC$6.5
+Contraption Maker$Dropped$PC$5.0
+De Blob$Dropped$PS3$6.5
+Deus Ex: Human Revolution$Dropped$PC$6.0
+Digimon World 2003$Dropped$PS3$3.0
+Don't Starve$Dropped$PC$7.0
+Dustforce$Dropped$PC$-
+FFVIII$Dropped$PC$6.0
+GTA V$Dropped$PC$6.0
+Hot Wheels Unleashed$Dropped$PC$-
+Life is Strange$Dropped$PC$6.5
+No Time to Explain$Dropped$PC$4.5
+Okami$Dropped$PS3$7.0
+Orcs Must Dit$Dropped$PC$5.0
+Rayman$Dropped$PC$6.0
+Skullgirls$Dropped$PC$6.5
+Soul Calibur VI$Dropped$PC$-
+Super Mario 64$Dropped$Emulator$-
+Super Meat Boy$Dropped$PC$5.0
+Tales of Xillia 2$Dropped$PS3$-
+Tales of Xillia$Dropped$PS3$5.0
+Thief 3$Dropped$PC$7.0
+To the Moon$Dropped$PC$-
+Warframe$Dropped$PC$6.0
+What the Golf?$Dropped$PC$6.0
