@@ -1,151 +1,151 @@
-DS$Emulator$Mobile$PC$PS2$PS3$PS4$PS5$Wii
-Diablo II Resurrected$Playing$PC$-
-Divinity: Original Sin 2$Playing$PC$-
-Guardians of the Galaxy$Playing$PC$-
-Pokemon Unite$Playing$Mobile$-
-Ratchet & Clank speedrunning$Playing$PS3$-
-Xenogears$Playing$PS3$-
-FFX-2$Soon$PS3$-
-Metal Gear Solid 3: Snake Eater$Soon$PS3$-
-Blue Fire$To do$PC$-
-Borderlands 2$To do$PC$-
-Breath of Fire IV$To do$PS3$-
-Celeste$To do$PC$-
-Children of Morta$To do$PC$-
-Chrono Trigger$To do$PC$-
-Cuphead$To do$PC$-
-Digimon World DS$To do$Emulator$-
-Dishonored DE$To do$PC$-
+Title$Status$Console$Score
+Diablo II Resurrected$Playing$PC$-1
+Divinity: Original Sin 2$Playing$PC$-1
+Guardians of the Galaxy$Playing$PC$-1
+Pokemon Unite$Playing$Mobile$-1
+Ratchet & Clank speedrunning$Playing$PS3$-1
+Xenogears$Playing$PS3$-1
+FFX-2$Soon$PS3$-1
+Metal Gear Solid 3: Snake Eater$Soon$PS3$-1
+Blue Fire$To do$PC$-1
+Borderlands 2$To do$PC$-1
+Breath of Fire IV$To do$PS3$-1
+Celeste$To do$PC$-1
+Children of Morta$To do$PC$-1
+Chrono Trigger$To do$PC$-1
+Cuphead$To do$PC$-1
+Digimon World DS$To do$Emulator$-1
+Dishonored DE$To do$PC$-1
 Dragon's Dogma: Dark Arisen$To do$PC$7.5
-Drakengard$To do$PS2$-
-Drakengard 3$To do$PS3$-
-FFXII$To do$PS2$-
-FFXIII$To do$PS3$-
-FFXIII-2$To do$PC$-
-FFXIII: Lightning Returns$To do$PC$-
-Final Fantasy Tactics$To do$PS3$-
-Ghost of Tsushima$To do$PS5$-
-Going Under$To do$PC$-
-Guacamelee 2$To do$PC$-
-Hollow Knight: Silksong$To do$PC$-
-Into the Breach$To do$PC$-
-Jak & Daxter$To do$PS3$-
-Jak 2$To do$PS3$-
-Jak 3$To do$PS3$-
+Drakengard$To do$PS2$-1
+Drakengard 3$To do$PS3$-1
+FFXII$To do$PS2$-1
+FFXIII$To do$PS3$-1
+FFXIII-2$To do$PC$-1
+FFXIII: Lightning Returns$To do$PC$-1
+Final Fantasy Tactics$To do$PS3$-1
+Ghost of Tsushima$To do$PS5$-1
+Going Under$To do$PC$-1
+Guacamelee 2$To do$PC$-1
+Hollow Knight: Silksong$To do$PC$-1
+Into the Breach$To do$PC$-1
+Jak & Daxter$To do$PS3$-1
+Jak 2$To do$PS3$-1
+Jak 3$To do$PS3$-1
 Kingdom Hearts 2 Final Mix$To do$PS3$8.5
-Metal Gear Rising: Revengeance$To do$PC$-
-Metal Gear Solid 4: Guns of the Patriots$To do$PS3$-
-Metal Gear Solid: Peace Walker$To do$PS3$-
-Monster Hunter: World$To do$PC$-
-Moon RPG$To do$PC$-
-Narita Boy$To do$PC$-
-Night in the Woods$To do$PC$-
-Nioh$To do$PC$-
-Planescape: Torment$To do$PC$-
-Prey$To do$PC$-
+Metal Gear Rising: Revengeance$To do$PC$-1
+Metal Gear Solid 4: Guns of the Patriots$To do$PS3$-1
+Metal Gear Solid: Peace Walker$To do$PS3$-1
+Monster Hunter: World$To do$PC$-1
+Moon RPG$To do$PC$-1
+Narita Boy$To do$PC$-1
+Night in the Woods$To do$PC$-1
+Nioh$To do$PC$-1
+Planescape: Torment$To do$PC$-1
+Prey$To do$PC$-1
 Ratchet & Clank: A Crack in Time$To do$PS3$8.5
-Ratchet & Clank: Quest for Booty$To do$PS3$-
+Ratchet & Clank: Quest for Booty$To do$PS3$-1
 Ratchet & Clank: Tools of Destruction$To do$PS3$7.0
-Scott Pilgrim vs. the World the Game$To do$PC$-
-Superliminal$To do$PC$-
-Tabletop Simulator$To do$PC$-
-Trine$To do$PC$-
-Trine 2$To do$PC$-
-Trine 3$To do$PC$-
+Scott Pilgrim vs. the World the Game$To do$PC$-1
+Superliminal$To do$PC$-1
+Tabletop Simulator$To do$PC$-1
+Trine$To do$PC$-1
+Trine 2$To do$PC$-1
+Trine 3$To do$PC$-1
 Witcher$To do$PC$6.0
-Witcher 2$To do$PC$-
-Witcher 3$To do$PC$-
-Black Myth: Wukong$To get$PC$-
-Coromon$To get$PC$-
-Death's Door$To get$PC$-
-Demon's Souls Remake$To get$PS5$-
-Elden Ring$To get$PC$-
-FFVII Remake$To get$PS5$-
-Final Fantasy Tactics Advance$To get$Emulator$-
-Horizon Forbidden West$To get$PS5$-
-KartRider: Drift$To get$PC$-
-Kena: Bridge of Spirits$To get$PC$-
-The Legend of Zelda: Breath of the Wild$To get$Emulator$-
-NieR Replicant sqrt(2)$To get$PC$-
-A Plague Tale: Requiem$To get$PC$-
-Pyre$To get$PC$-
-Ratchet & Clank: Rift Apart$To get$PS5$-
-AER Memories of Old$Consider$PC$-
-Anuchard$Consider$PC$-
-Avatar: Frontiers of Pandora$Consider$PC$-
-Beyond Good and Evil 2$Consider$PC$-
-Creature in the Well$Consider$PC$-
-CrossCode$Consider$PC$-
-Cyberpunk 2077$Consider$PC$-
-Darkest Dungeon$Consider$PC$-
-Digimon Survive$Consider$PC$-
-Digimon World RE:Digitize$Consider$Emulator$-
-Digimon World: Next Order$Consider$PS5$-
-Dorfromantik$Consider$PC$-
-Enslaved: Odyssey to the West$Consider$PC$-
-Frogsong$Consider$PC$-
-Fuga: Melodies of Steel$Consider$PC$-
-The Gecko Gods$Consider$PC$-
-GigaBash$Consider$PC$-
-God of War 2$Consider$PS3$-
-Gothic$Consider$PC$-
-Granblue Fantasy Relink$Consider$PC$-
-GRIME$Consider$PC$-
-Have a Nice Death$Consider$PC$-
-Here Comes Niko$Consider$PC$-
-HITMAN$Consider$PC$-
-Just Cause 4$Consider$PC$-
-Lost Odyssey$Consider$Emulator$-
-MediEvil Remake$Consider$PS4$-
-Metal Slug Tactics$Consider$PC$-
-Metro Last Night Redux$Consider$PC$-
-Omno$Consider$PC$-
-Palia$Consider$PC$-
-Pit People$Consider$PC$-
-Pokemon MD: Blue Rescue Team$Consider$Emulator$-
-Psychonauts 2$Consider$PC$-
-The Rabbit and the Owl$Consider$PC$-
-Raji: an Ancient Epic deluxe or whatever$Consider$PC$-
-Remnant: From the Ashes$Consider$PC$-
-Replaced$Consider$PC$-
-STAR WARS: Battlefront II$Consider$PC$-
-Steins; Gate$Consider$PS3$-
-Super Magbot$Consider$PC$-
-Super Mario RPG$Consider$Emulator$-
-The Talos Principle$Consider$PC$-
-The Textorcist$Consider$PC$-
-Torchlight II$Consider$PC$-
-Totemic$Consider$PC$-
-Tunic$Consider$PC$-
-Tyranny$Consider$PC$-
-Yoku's Island Express$Consider$PC$-
-Broforce$Multiplayer$PC$8.0
-Can't Drive This$Multiplayer$PC$6.5
-Castle Crashers$Multiplayer$PC$8.0
-Civilization V$Multiplayer$PC$8.0
-Civilization VI$Multiplayer$PC$8.0
-Crawl$Multiplayer$PC$-
-CS:GO$Multiplayer$PC$7.0
-Deep Rock Galactic$Multiplayer$PC$7.0
-Don't Starve Together$Multiplayer$PC$8.5
-Duck Game$Multiplayer$PC$8.0
-GTA Online$Multiplayer$PC$9.0
-Heroes of Might & Magic 3$Multiplayer$PC$8.5
-League of Legends$Multiplayer$PC$-
-Lovers in Dangerous Time Space$Multiplayer$PC$-
-Mashed: Fully Loaded$Multiplayer$PS2$8.0
-Minecraft$Multiplayer$PC$8.5
-Mordhau$Multiplayer$PC$7.0
-Overcooked$Multiplayer$PC$-
-Portal 2$Multiplayer$PC$9.0
-Rocket League$Multiplayer$PC$8.0
-Sanctum 2$Multiplayer$PC$-
-Sonic All Stars Racing Transformed$Multiplayer$PC$8.0
-Speedrunners$Multiplayer$PC$8.0
-Team Fortress 2$Multiplayer$PC$7.5
-TowerFall Ascension$Multiplayer$PC$-
-Tricky Towers$Multiplayer$PC$7.0
-Ultimate Chicken Horse$Multiplayer$PC$-
+Witcher 2$To do$PC$-1
+Witcher 3$To do$PC$-1
+Black Myth: Wukong$To do$PC$-1
+Coromon$To do$PC$-1
+Death's Door$To do$PC$-1
+Demon's Souls Remake$To do$PS5$-1
+Elden Ring$To do$PC$-1
+FFVII Remake$To do$PS5$-1
+Final Fantasy Tactics Advance$To do$Emulator$-1
+Horizon Forbidden West$To do$PS5$-1
+KartRider: Drift$To do$PC$-1
+Kena: Bridge of Spirits$To do$PC$-1
+The Legend of Zelda: Breath of the Wild$To do$Emulator$-1
+NieR Replicant sqrt(2)$To do$PC$-1
+A Plague Tale: Requiem$To do$PC$-1
+Pyre$To do$PC$-1
+Ratchet & Clank: Rift Apart$To do$PS5$-1
+AER Memories of Old$Consider$PC$-1
+Anuchard$Consider$PC$-1
+Avatar: Frontiers of Pandora$Consider$PC$-1
+Beyond Good and Evil 2$Consider$PC$-1
+Creature in the Well$Consider$PC$-1
+CrossCode$Consider$PC$-1
+Cyberpunk 2077$Consider$PC$-1
+Darkest Dungeon$Consider$PC$-1
+Digimon Survive$Consider$PC$-1
+Digimon World RE:Digitize$Consider$Emulator$-1
+Digimon World: Next Order$Consider$PS5$-1
+Dorfromantik$Consider$PC$-1
+Enslaved: Odyssey to the West$Consider$PC$-1
+Frogsong$Consider$PC$-1
+Fuga: Melodies of Steel$Consider$PC$-1
+The Gecko Gods$Consider$PC$-1
+GigaBash$Consider$PC$-1
+God of War 2$Consider$PS3$-1
+Gothic$Consider$PC$-1
+Granblue Fantasy Relink$Consider$PC$-1
+GRIME$Consider$PC$-1
+Have a Nice Death$Consider$PC$-1
+Here Comes Niko$Consider$PC$-1
+HITMAN$Consider$PC$-1
+Just Cause 4$Consider$PC$-1
+Lost Odyssey$Consider$Emulator$-1
+MediEvil Remake$Consider$PS4$-1
+Metal Slug Tactics$Consider$PC$-1
+Metro Last Night Redux$Consider$PC$-1
+Omno$Consider$PC$-1
+Palia$Consider$PC$-1
+Pit People$Consider$PC$-1
+Pokemon MD: Blue Rescue Team$Consider$Emulator$-1
+Psychonauts 2$Consider$PC$-1
+The Rabbit and the Owl$Consider$PC$-1
+Raji: an Ancient Epic deluxe or whatever$Consider$PC$-1
+Remnant: From the Ashes$Consider$PC$-1
+Replaced$Consider$PC$-1
+STAR WARS: Battlefront II$Consider$PC$-1
+Steins; Gate$Consider$PS3$-1
+Super Magbot$Consider$PC$-1
+Super Mario RPG$Consider$Emulator$-1
+The Talos Principle$Consider$PC$-1
+The Textorcist$Consider$PC$-1
+Torchlight II$Consider$PC$-1
+Totemic$Consider$PC$-1
+Tunic$Consider$PC$-1
+Tyranny$Consider$PC$-1
+Yoku's Island Express$Consider$PC$-1
+Broforce$Whenever$PC$8.0
+Can't Drive This$Whenever$PC$6.5
+Castle Crashers$Whenever$PC$8.0
+Civilization V$Whenever$PC$8.0
+Civilization VI$Whenever$PC$8.0
+Crawl$Whenever$PC$-1
+CS:GO$Whenever$PC$7.0
+Deep Rock Galactic$Whenever$PC$7.0
+Don't Starve Together$Whenever$PC$8.5
+Duck Game$Whenever$PC$8.0
+GTA Online$Whenever$PC$9.0
+Heroes of Might & Magic 3$Whenever$PC$8.5
+League of Legends$Whenever$PC$-1
+Lovers in Dangerous Time Space$Whenever$PC$-1
+Mashed: Fully Loaded$Whenever$PS2$8.0
+Minecraft$Whenever$PC$8.5
+Mordhau$Whenever$PC$7.0
+Overcooked$Whenever$PC$-1
+Portal 2$Whenever$PC$9.0
+Rocket League$Whenever$PC$8.0
+Sanctum 2$Whenever$PC$-1
+Sonic All Stars Racing Transformed$Whenever$PC$8.0
+Speedrunners$Whenever$PC$8.0
+Team Fortress 2$Whenever$PC$7.5
+TowerFall Ascension$Whenever$PC$-1
+Tricky Towers$Whenever$PC$7.0
+Ultimate Chicken Horse$Whenever$PC$-1
 Among Us$Done$PC$7.0
 Antichamber$Done$PC$7.5
 ARK: Survival Evolved$Done$PC$6.5
@@ -159,7 +159,7 @@ The Binding of Isaac: Rebirth$Done$PC$8.5
 Bioshock$Done$PC$8.0
 Bioshock Infinite$Done$PC$8.0
 Black Mesa$Done$PC$8.0
-Blade and Soul$Done$PC$-
+Blade and Soul$Done$PC$-1
 Braid$Done$PC$8.0
 Cave Story$Done$PC$7.5
 Chaos on Deponia$Done$PC$7.0
@@ -281,30 +281,30 @@ Vagrant Story$Done$PS3$8.5
 Warlock: Master of the Arcane$Done$PC$7.0
 Baba is You$Dropped$PC$6.0
 Bloodborne$Dropped$PS4$7.0
-Bravely Default$Dropped$Emulator$-
-Carto$Dropped$PC$-
+Bravely Default$Dropped$Emulator$-1
+Carto$Dropped$PC$-1
 Child of Light$Dropped$PC$6.5
 Contraption Maker$Dropped$PC$5.0
 De Blob$Dropped$PS3$6.5
 Deus Ex: Human Revolution$Dropped$PC$6.0
 Digimon World 2003$Dropped$PS3$3.0
 Don't Starve$Dropped$PC$7.0
-Dustforce$Dropped$PC$-
+Dustforce$Dropped$PC$-1
 FFVIII$Dropped$PC$6.0
 GTA V$Dropped$PC$6.0
-Hot Wheels Unleashed$Dropped$PC$-
+Hot Wheels Unleashed$Dropped$PC$-1
 Life is Strange$Dropped$PC$6.5
 No Time to Explain$Dropped$PC$4.5
 Okami$Dropped$PS3$7.0
 Orcs Must Dit$Dropped$PC$5.0
 Rayman$Dropped$PC$6.0
 Skullgirls$Dropped$PC$6.5
-Soul Calibur VI$Dropped$PC$-
-Super Mario 64$Dropped$Emulator$-
+Soul Calibur VI$Dropped$PC$-1
+Super Mario 64$Dropped$Emulator$-1
 Super Meat Boy$Dropped$PC$5.0
-Tales of Xillia 2$Dropped$PS3$-
+Tales of Xillia 2$Dropped$PS3$-1
 Tales of Xillia$Dropped$PS3$5.0
 Thief 3$Dropped$PC$7.0
-To the Moon$Dropped$PC$-
+To the Moon$Dropped$PC$-1
 Warframe$Dropped$PC$6.0
 What the Golf?$Dropped$PC$6.0
