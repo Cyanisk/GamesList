@@ -15,8 +15,8 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(347, 150)
-        Dialog.setMinimumSize(QtCore.QSize(347, 0))
-        Dialog.setMaximumSize(QtCore.QSize(347, 16777215))
+        Dialog.setMinimumSize(QtCore.QSize(347, 150))
+        Dialog.setMaximumSize(QtCore.QSize(347, 150))
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
         self.verticalLayout.setSpacing(10)
@@ -58,10 +58,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Add game"))
         self.lineEdit_title.setPlaceholderText(_translate("Dialog", "Title"))
-        self.comboBox_status.setPlaceholderText(_translate("Dialog", "Status"))
-        self.comboBox_console.setPlaceholderText(_translate("Dialog", "Console"))
-        self.comboBox_score.setPlaceholderText(_translate("Dialog", "Score"))
         self.button_cancel.setText(_translate("Dialog", "Cancel"))
         self.button_add.setText(_translate("Dialog", "Add game"))

@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import pandas as pd
@@ -52,12 +52,17 @@ class GamesList(QMainWindow):
         self.ui.setupUi(self)
         self.setWindowTitle('Games List')
         
-        # Read in consoles and games
-        data = pd.read_csv("Games.txt", sep = "$")
-        consoles = pd.read_csv("Consoles.txt")
+        # Get data
+        self.data = pd.read_csv("Games.txt", sep = "$")
+        self.status = [c[:-1] for c in open("Status.txt").readlines()]
+        self.consoles = [c[:-1] for c in open("Consoles.txt").readlines()]
+        self.scores = ["No score","10.0","9.5","9.0","8.5",
+                       "8.0","7.5","7.0","6.5","6.0","5.5",
+                       "5.0","4.5","4.0","3.5","3.0","2.5",
+                       "2.0","1.5","1.0","0.5","0.0"]
         
         # Set up QTableView
-        self.tableModel = TableModel(data)
+        self.tableModel = TableModel(self.data)
         self.ui.tableView.setModel(self.tableModel)
         self.ui.tableView.setColumnWidth(0, 327)
         self.ui.tableView.setColumnWidth(1, 95)
@@ -65,6 +70,45 @@ class GamesList(QMainWindow):
         self.ui.tableView.setColumnWidth(3, 50)
         self.ui.tableView.setSelectionBehavior(1) # Select whole row
         self.ui.tableView.setSelectionMode(1) # Only one selection at a time
+        
+        # Define button behaviour
+        self.ui.button_add.clicked.connect(self.openAddDialog)
+        self.ui.button_edit.clicked.connect(self.openEditDialog)
+        self.ui.button_consoles.clicked.connect(self.openConsoleDialog)
+        self.ui.button_clear.clicked.connect(self.clearSearch)
+    
+    # ----- Add Dialog Functions -----
+
+    def openAddDialog(self):
+        self.dialog = QtWidgets.QDialog()
+        self.dialog.ui = addGameDialog()
+        self.dialog.ui.setupUi(self.dialog)
+        self.dialog.ui.comboBox_status.addItems(self.status)
+        self.dialog.ui.comboBox_console.addItems(self.consoles)
+        self.dialog.ui.comboBox_score.addItems(self.scores)
+        self.dialog.ui.button_add.clicked.connect(self.addGame)
+        self.dialog.exec_()
+        #self.dialog.show()
+    
+    def addGame(self):
+        title = self.dialog.ui.lineEdit_title.text()
+        status = self.dialog.ui.comboBox_status.currentText()
+        console = self.dialog.ui.comboBox_console.currentText()
+        score = self.dialog.ui.comboBox_score.currentText()
+        
+        if title in self.data.Title.values:
+            print("noooo")
+        
+    
+    
+    def openEditDialog(self):
+        print("Game updated")
+    
+    def openConsoleDialog(self):
+        print(self.consoles)
+    
+    def clearSearch(self):
+        self.ui.lineEdit_search.clear()
         
 
 if __name__ == "__main__":

@@ -13,17 +13,17 @@
   <property name="minimumSize">
    <size>
     <width>347</width>
-    <height>0</height>
+    <height>150</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>347</width>
-    <height>16777215</height>
+    <height>150</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add game</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -76,25 +76,13 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QComboBox" name="comboBox_status">
-       <property name="placeholderText">
-        <string>Status</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox_status"/>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_console">
-       <property name="placeholderText">
-        <string>Console</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox_console"/>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_score">
-       <property name="placeholderText">
-        <string>Score</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="comboBox_score"/>
      </item>
     </layout>
    </item>
