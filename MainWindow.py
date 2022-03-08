@@ -24,6 +24,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.tableView = QtWidgets.QTableView(self.centralwidget)
+        self.tableView.setMinimumSize(QtCore.QSize(570, 0))
         self.tableView.setObjectName("tableView")
         self.horizontalLayout.addWidget(self.tableView)
         self.verticalLayout = QtWidgets.QVBoxLayout()
