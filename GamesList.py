@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QModelIndex, pyqtSignal
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import pandas as pd
 from MainWindow import Ui_MainWindow
@@ -12,6 +12,7 @@ from EditGameDialog import Ui_Dialog as editGameDialog
 #TODO: Pop-up menus
 #TODO: Search
 #TODO: Column sort
+#TODO: Commit when Enter is pressed in lineEdit
 
 
 class TableModel(QtCore.QAbstractTableModel):
@@ -35,11 +36,29 @@ class TableModel(QtCore.QAbstractTableModel):
         return self._data.shape[1]
     
     def headerData(self, section, orientation, role):
-        if role == Qt.DisplayRole:
+        if role ==  Qt.DisplayRole:
             if orientation == Qt.Horizontal:
                 return self._data.columns[section]
             if orientation == Qt.Vertical:
                 return str(self._data.index[section] + 1)
+            
+    def setData(self, index, value, role):
+        if role == Qt.EditRole:
+            
+            if value[0] in self._data.Title.values:
+                return False
+            
+            # I have no clue about the values used below - it seems that they
+            # don't do anything but must be valid...
+            self.beginInsertRows(QModelIndex(), 0, 0)
+            
+            if value[3] == "No score":
+                value[3] = -1
+            self._data.loc[self._data.shape[0]] = value
+            
+            self.endInsertRows()
+            return True
+        return False
 
 
 class GamesList(QMainWindow):
@@ -54,6 +73,7 @@ class GamesList(QMainWindow):
         
         # Get data
         self.data = pd.read_csv("Games.txt", sep = "$")
+        #self.data = pd.read_csv("Games.txt", sep = "$")
         self.status = [c[:-1] for c in open("Status.txt").readlines()]
         self.consoles = [c[:-1] for c in open("Consoles.txt").readlines()]
         self.scores = ["No score","10.0","9.5","9.0","8.5",
@@ -77,6 +97,7 @@ class GamesList(QMainWindow):
         self.ui.button_consoles.clicked.connect(self.openConsoleDialog)
         self.ui.button_clear.clicked.connect(self.clearSearch)
     
+    
     # ----- Add Dialog Functions -----
 
     def openAddDialog(self):
@@ -87,6 +108,7 @@ class GamesList(QMainWindow):
         self.dialog.ui.comboBox_console.addItems(self.consoles)
         self.dialog.ui.comboBox_score.addItems(self.scores)
         self.dialog.ui.button_add.clicked.connect(self.addGame)
+        self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
         self.dialog.exec_()
         #self.dialog.show()
     
@@ -96,13 +118,36 @@ class GamesList(QMainWindow):
         console = self.dialog.ui.comboBox_console.currentText()
         score = self.dialog.ui.comboBox_score.currentText()
         
-        if title in self.data.Title.values:
+        if self.tableModel.setData(QModelIndex(), [title, status, console, score], Qt.EditRole):
+            self.dialog.close()
+        else:
             print("noooo")
         
+        #print(self.tableModel.flags(QModelIndex())[0])
+        
+        #if self.tableModel.addRow(title, status, console, score):
+        #    self.dialog.close()
+        #else:
+        #    print("noooo")
+        
     
+    # ----- Edit Dialog Functions -----
     
     def openEditDialog(self):
-        print("Game updated")
+        if not self.ui.tableView.selectionModel().hasSelection():
+            return
+        
+        item = self.ui.tableView.selectionModel().selection()
+        self.dialog = QtWidgets.QDialog()
+        self.dialog.ui = editGameDialog()
+        self.dialog.ui.setupUi(self.dialog)
+        #self.dialog.ui.lineEdit_title =
+        self.dialog.ui.comboBox_status.addItems(self.status)
+        self.dialog.ui.comboBox_console.addItems(self.consoles)
+        self.dialog.ui.comboBox_score.addItems(self.scores)
+        #self.dialog.ui.button_update.clicked.connect(self.addGame)
+        self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
+        self.dialog.exec_()
     
     def openConsoleDialog(self):
         print(self.consoles)
