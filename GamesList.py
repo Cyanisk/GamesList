@@ -8,15 +8,15 @@ from AddGameDialog import Ui_Dialog as addGameDialog
 from EditGameDialog import Ui_Dialog as editGameDialog
 
 #TODO: Deleting items from a sorted list works, but the view behaves strange
-#TODO: Sorting is very slow
+#TODO: Sorting is very slow (perhaps use df.sort_values instead of the proxy model)
 #TODO: Consoles menu?
-#TODO: Commit when Enter is pressed in lineEdit
 
 
 def reduce_title(t):
-        excl = ["a", "by", "in", "of", "the"]
-        t_list = t.lower().split(" ")
-        return " ".join(list(filter(lambda a:a not in excl, t_list)))
+    # Words that are commonly disregarded from sorting
+    excl = ["a", "by", "in", "of", "the"]
+    t_list = t.lower().split(" ")
+    return " ".join(list(filter(lambda a:a not in excl, t_list)))
     
 
 class TableModel(QtCore.QAbstractTableModel):
@@ -235,6 +235,8 @@ class GamesList(QMainWindow):
         self.dialog.ui.comboBox_score.addItems(self.scores)
         self.dialog.ui.button_add.clicked.connect(self.addGame)
         self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
+        self.dialog.ui.button_cancel.setAutoDefault(False)
+        self.dialog.ui.button_add.setAutoDefault(True)
         self.dialog.exec_()
     
     def addGame(self):
@@ -276,6 +278,9 @@ class GamesList(QMainWindow):
         self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
         self.dialog.ui.button_delete.clicked.connect(self.deleteGame)
         self.dialog.ui.button_update.clicked.connect(self.updateGame)
+        self.dialog.ui.button_cancel.setAutoDefault(False)
+        self.dialog.ui.button_delete.setAutoDefault(False)
+        self.dialog.ui.button_update.setAutoDefault(True)
         self.dialog.exec_()
     
     def deleteGame(self):
@@ -308,10 +313,7 @@ class GamesList(QMainWindow):
     
     
     def openConsoleDialog(self):
-        print(self.proxyModel.sortColumn())
-        print(self.proxyModel.sortOrder())
-        self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
-        self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
+        print("What now?")
     
     def clearSearch(self):
         self.ui.lineEdit_search.clear()
