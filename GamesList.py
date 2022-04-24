@@ -10,6 +10,7 @@ from EditGameDialog import Ui_Dialog as editGameDialog
 #TODO: Deleting items from a sorted list works, but the view behaves strange
 #TODO: Sorting is very slow (perhaps use df.sort_values instead of the proxy model)
 #TODO: Consoles menu?
+#TODO: Do we even need to call beginInsertRows and stuff now that sorting calls beginResetModel?
 
 
 def reduce_title(t):
@@ -24,8 +25,11 @@ class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, fileName, data, status_dict):
         super(TableModel, self).__init__()
         self.fileName = fileName
+        self._backend_data = data
         self._data = data
         self.status_dict = status_dict
+        self.sort_column = 1
+        self.sort_order = 0
     
     def data(self, index, role):
         if role == Qt.DisplayRole:
@@ -52,7 +56,7 @@ class TableModel(QtCore.QAbstractTableModel):
         if role == Qt.EditRole:
             
             # Check validity of title
-            if value[0] in self._data.Title.values:
+            if value[0] in self._backend_data["Title"].values:
                 return "\"" + value[0] + "\" already exists."
             if value[0].strip() == "":
                 return "Enter a title."
@@ -61,7 +65,7 @@ class TableModel(QtCore.QAbstractTableModel):
             
             # I have no clue about the values used below - it seems that they
             # don't do anything but must be valid...
-            self.beginInsertRows(QModelIndex(), 0, 0)
+            #self.beginInsertRows(QModelIndex(), 0, 0)
             
             # Fix some values
             if value[3] == "No score":
@@ -71,31 +75,34 @@ class TableModel(QtCore.QAbstractTableModel):
             value.append(reduce_title(value[0]))
             value.append(self.status_dict[value[1]])
             
-            # Find the place where the new value goes
-            row = pd.DataFrame([value], columns=self._data.columns)
-            temp = self._data[(self._data["categorized"] <= value[5]) &
-                              (self._data["reduced"] <= value[4])]
+            # Find the row that comes before the new value, then insert
+            row = pd.DataFrame([value], columns=self._backend_data.columns)
+            temp = self._backend_data[(self._backend_data["categorized"] < value[5]) |
+                                      ((self._backend_data["categorized"] == value[5]) & 
+                                       (self._backend_data["reduced"] <= value[4]))]
             if temp.empty:
-                self._data = pd.concat([row, self._data]).reset_index(drop=True)
+                self._backend_data = pd.concat([row, self._backend_data]).reset_index(drop=True)
             else:
                 idx = temp.index[-1] + 1
-                self._data = pd.concat([self._data.iloc[:idx], row, self._data.iloc[idx:]]).reset_index(drop=True)
+                self._backend_data = pd.concat([self._backend_data.iloc[:idx], row, self._backend_data.iloc[idx:]]).reset_index(drop=True)
+            
+            self.sortData(self.sort_column, self.sort_order)
             
             # Save the data
-            self._data.to_csv(self.fileName, sep="$", header=True, index=False)
+            self._backend_data.to_csv(self.fileName, sep="$", header=True, index=False)
             
-            self.endInsertRows()
+            #self.endInsertRows()
             return ""
         return "Something went wrong."
     
     def updateData(self, index, value, role):
         if role == Qt.EditRole:
             
-            row = index.row()
+            row = self._data.index[index.row()]
             
             # Check that title doesn't already exist among the other objects
-            if (value[0] in self._data.Title.values[:row-1]) | \
-                (value[0] in self._data.Title.values[row+1:]):
+            if (value[0] in self._backend_data.Title.values[:row-1]) | \
+                (value[0] in self._backend_data.Title.values[row+1:]):
                 return "\"" + value[0] + "\" already exists."
             if value[0].strip() == "":
                 return "Enter a title."
@@ -103,9 +110,9 @@ class TableModel(QtCore.QAbstractTableModel):
                 return "The symbol \"$\" is reserved."
             
             # Remove the row, then insert the update as a new row
-            self.beginRemoveRows(QModelIndex(), 0, 0)
-            self._data = self._data.drop(row, axis=0)
-            self.endRemoveRows()
+            #self.beginRemoveRows(QModelIndex(), 0, 0)
+            self._backend_data = self._backend_data.drop(row, axis=0)
+            #self.endRemoveRows()
             
             return self.setData(QModelIndex(), value, role)
         
@@ -114,20 +121,41 @@ class TableModel(QtCore.QAbstractTableModel):
     def deleteData(self, index, role):
         if role == Qt.EditRole:
             
-            self.beginRemoveRows(QModelIndex(), 0, 0)
+            row = self._data.index[index.row()]
             
-            self._data = self._data.drop(index.row(), axis=0).reset_index(drop=True)
+            #self.beginRemoveRows(QModelIndex(), 0, 0)
+            
+            self._backend_data = self._backend_data.drop(row, axis=0).reset_index(drop=True)
             
             # Save the data
-            self._data.to_csv(self.fileName, sep="$", header=True, index=False)
+            self._backend_data.to_csv(self.fileName, sep="$", header=True, index=False)
             
-            self.endRemoveRows()
+            #self.endRemoveRows()
             
             return True
         
         return False
+    
+    def sortData(self, column, order):
+        self.sort_column = column
+        self.sort_order = order
+        ascending = (order == 0)
+        by = ""
         
-
+        if column == 0: 
+            by = 'reduced'
+        elif column == 1:
+            by = ['categorized', 'reduced']
+        elif column == 2:
+            by = ['Console', 'reduced']
+        elif column == 3:
+            by = ['Score', 'reduced']
+        
+        self.beginResetModel()
+        self._data = self._backend_data.sort_values(by=by, ascending=ascending)
+        self.endResetModel()
+        
+"""
 class BetterProxyModel(QtCore.QSortFilterProxyModel):
     def __init__(self, status):
         QtCore.QSortFilterProxyModel.__init__(self)
@@ -168,7 +196,7 @@ class BetterProxyModel(QtCore.QSortFilterProxyModel):
             return lval, rval
         else:
             return rval, lval
-
+"""
 
 class GamesList(QMainWindow):
     
@@ -197,11 +225,11 @@ class GamesList(QMainWindow):
         
         # Set up QTableView
         self.tableModel = TableModel(self.fileName, data, status_dict)
-        self.proxyModel = BetterProxyModel(self.status)
-        self.proxyModel.setSourceModel(self.tableModel)
-        self.proxyModel.setFilterKeyColumn(0)
-        self.proxyModel.setFilterCaseSensitivity(Qt.CaseInsensitive)
-        self.ui.tableView.setModel(self.proxyModel)
+        #self.proxyModel = BetterProxyModel(self.status)
+        #self.proxyModel.setSourceModel(self.tableModel)
+        #self.proxyModel.setFilterKeyColumn(0)
+        #self.proxyModel.setFilterCaseSensitivity(Qt.CaseInsensitive)
+        self.ui.tableView.setModel(self.tableModel)
         self.ui.tableView.setColumnWidth(0, 327)
         self.ui.tableView.setColumnWidth(1, 95)
         self.ui.tableView.setColumnWidth(2, 95)
@@ -213,6 +241,7 @@ class GamesList(QMainWindow):
         self.ui.tableView.setSelectionMode(1) # Only one selection at a time
         self.ui.tableView.setSortingEnabled(True)
         self.ui.tableView.sortByColumn(1, Qt.AscendingOrder)
+        self.ui.tableView.horizontalHeader().sortIndicatorChanged.connect(self.headerTriggered)
         
         # Define button behaviour
         self.ui.button_add.clicked.connect(self.openAddDialog)
@@ -221,8 +250,12 @@ class GamesList(QMainWindow):
         self.ui.button_clear.clicked.connect(self.clearSearch)
         
         # Search bar
-        self.ui.lineEdit_search.textChanged.connect(self.proxyModel.setFilterRegularExpression)
+        #self.ui.lineEdit_search.textChanged.connect(self.proxyModel.setFilterRegularExpression)
     
+    
+    def headerTriggered(self, mainColumn=None, order=None):
+        self.tableModel.sortData(mainColumn, order)
+        
     
     # ----- Add Dialog Functions -----
 
@@ -247,6 +280,14 @@ class GamesList(QMainWindow):
         
         result = self.tableModel.setData(QModelIndex(), [title, status, console, score], Qt.EditRole)
         if result == "":
+            self.dialog.close()
+        else:
+            message = QMessageBox(text = result)
+            message.setWindowTitle("Error")
+            message.exec()
+        """
+        result = self.tableModel.setData(QModelIndex(), [title, status, console, score], Qt.EditRole)
+        if result == "":
             self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
             self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
             self.dialog.close()
@@ -254,7 +295,7 @@ class GamesList(QMainWindow):
             message = QMessageBox(text = result)
             message.setWindowTitle("Error")
             message.exec()
-        
+        """
     
     # ----- Edit Dialog Functions -----
     
@@ -285,6 +326,12 @@ class GamesList(QMainWindow):
     
     def deleteGame(self):
         row = self.ui.tableView.selectionModel().selection().indexes()[0]
+        
+        if self.tableModel.deleteData(row, Qt.EditRole):
+            self.dialog.close()
+        else:
+            print("noooo")
+        """
         sourceRow = self.proxyModel.mapToSource(row)
         if self.tableModel.deleteData(sourceRow, Qt.EditRole):
             self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
@@ -292,15 +339,25 @@ class GamesList(QMainWindow):
             self.dialog.close()
         else:
             print("noooo")
+        """
     
     def updateGame(self):
         row = self.ui.tableView.selectionModel().selection().indexes()[0]
-        sourceRow = self.proxyModel.mapToSource(row)
+        #sourceRow = self.proxyModel.mapToSource(row)
         title = self.dialog.ui.lineEdit_title.text()
         status = self.dialog.ui.comboBox_status.currentText()
         console = self.dialog.ui.comboBox_console.currentText()
         score = self.dialog.ui.comboBox_score.currentText()
         
+        result = self.tableModel.updateData(row, [title, status, console, score], Qt.EditRole)
+        if result == "":
+            self.dialog.close()
+        else:
+            message = QMessageBox(text = result)
+            message.setWindowTitle("Error")
+            message.exec()
+        
+        """
         result = self.tableModel.updateData(sourceRow, [title, status, console, score], Qt.EditRole)
         if result == "":
             self.proxyModel.sort(self.proxyModel.sortColumn(), 1-self.proxyModel.sortOrder())
@@ -310,10 +367,11 @@ class GamesList(QMainWindow):
             message = QMessageBox(text = result)
             message.setWindowTitle("Error")
             message.exec()
-    
+        """
     
     def openConsoleDialog(self):
         print("What now?")
+        self.tableModel.test(self.ui.tableView.selectionModel().selection().indexes()[0].row())
     
     def clearSearch(self):
         self.ui.lineEdit_search.clear()
