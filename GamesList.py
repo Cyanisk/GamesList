@@ -9,8 +9,6 @@ from EditGameDialog import Ui_Dialog as editGameDialog
 
 
 #TODO: Consoles menu?
-#TODO: Disable columnheader dragging
-#TODO: Does adding a game to the end of the list work?
 #TODO: Search?
 
 
@@ -29,6 +27,7 @@ class TableModel(QtCore.QAbstractTableModel):
         self._backend_data = data  # The data that is imported/exported/edited
         self._data = data  # The representation of the data after applying sorting (used by tableView)
         self.status_dict = status_dict
+        self.current_filter = ""
         self.sort_column = 1
         self.sort_order = 0  # 0 = ascending, 1 = descending
     
@@ -90,7 +89,7 @@ class TableModel(QtCore.QAbstractTableModel):
                                                 self._backend_data.iloc[idx:]]).reset_index(drop=True)
             
             # Update the tableView (maintain current sorting)
-            self.sortData(self.sort_column, self.sort_order)
+            self.filterSortData()
             
             # Save the data
             self._backend_data.to_csv(self.fileName, sep="$", header=True, index=False)
@@ -127,7 +126,7 @@ class TableModel(QtCore.QAbstractTableModel):
             
             # Delete the row and update the tableView (maintain current sorting)
             self._backend_data = self._backend_data.drop(row, axis=0).reset_index(drop=True)
-            self.sortData(self.sort_column, self.sort_order)
+            self.filterSortData()
             
             # Save the data
             self._backend_data.to_csv(self.fileName, sep="$", header=True, index=False)
@@ -136,13 +135,23 @@ class TableModel(QtCore.QAbstractTableModel):
         
         return "Something went wrong"
     
-    def sortData(self, column, order):
+    def filterSortData(self, text=None, column=-1, order=-1):
+        # If an argument is unspecified, use the current choice
+        if text == None:
+            text = self.current_filter
+        if column == -1:
+            column = self.sort_column
+        if order == -1:
+            order = self.sort_order
+        
+        self.current_filter = text
         self.sort_column = column
         self.sort_order = order
+        
         ascending = (order == 0)
         by = ""
         
-        # column != 0, the rows are sorted secondarily by reduced title (always ascending)
+        # If column != 0, the rows are sorted secondarily by reduced title (always ascending)
         if column == 0: 
             by = 'reduced'
         elif column == 1:
@@ -157,8 +166,16 @@ class TableModel(QtCore.QAbstractTableModel):
         
         # Declare that the displayed data is about to change, then do it
         self.beginResetModel()
-        self._data = self._backend_data.sort_values(by=by, ascending=ascending)
+        temp = self._backend_data[self._backend_data['Title'].str.lower().str.contains(text.lower())]
+        temp = temp.sort_values(by=by, ascending=ascending)
+        self._data = temp
         self.endResetModel()
+    """
+    def filterData(self, text):
+        # Declare that the displayed data is about to change, then do it
+        self.beginResetModel()
+        self._data = self._backend_data[self._backend_data['reduced'].str.contains(text.lower())]
+        self.endResetModel()"""
         
 
 class GamesList(QMainWindow):
@@ -211,13 +228,13 @@ class GamesList(QMainWindow):
         self.ui.button_clear.clicked.connect(self.clearSearch)
         
         # Search bar
-        #self.ui.lineEdit_search.textChanged.connect(self.proxyModel.setFilterRegularExpression)
+        self.ui.lineEdit_search.textChanged.connect(self.applyFilter)
     
     
     # ----- Column Sorting Functions -----
     
-    def headerTriggered(self, mainColumn=None, order=None):
-        self.tableModel.sortData(mainColumn, order)
+    def headerTriggered(self, column=-1, order=-1):
+        self.tableModel.filterSortData(column=column, order=order)
         
     
     # ----- Add Dialog Functions -----
@@ -309,13 +326,20 @@ class GamesList(QMainWindow):
     # ----- Console Dialog Functions -----
     
     def openConsoleDialog(self):
+        #text = self.ui.lineEdit_search.text()
+        #self.tableModel.filterSortData(text=text)
         return
     
     
-    # ----- Clear Search -----
+    # ----- Search Functions -----
     
     def clearSearch(self):
+        # Clear search field and reload displayed data
         self.ui.lineEdit_search.clear()
+        self.tableModel.filterSortData(text="")
+    
+    def applyFilter(self, text):
+        self.tableModel.filterSortData(text=text)
         
 
 if __name__ == "__main__":
