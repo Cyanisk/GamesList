@@ -110,7 +110,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Consoles</string>
+         <string>Edit consoles</string>
         </property>
        </widget>
       </item>

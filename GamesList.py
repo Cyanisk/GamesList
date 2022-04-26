@@ -1,15 +1,12 @@
 import sys
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import Qt, QModelIndex, pyqtSignal, QSortFilterProxyModel
+from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 import pandas as pd
 from MainWindow import Ui_MainWindow
 from AddGameDialog import Ui_Dialog as addGameDialog
 from EditGameDialog import Ui_Dialog as editGameDialog
-
-
-#TODO: Consoles menu?
-#TODO: Search?
+from EditConsolesDialog import Ui_Dialog as editConsolesDialog
 
 
 def reduce_title(t):
@@ -170,12 +167,19 @@ class TableModel(QtCore.QAbstractTableModel):
         temp = temp.sort_values(by=by, ascending=ascending)
         self._data = temp
         self.endResetModel()
-    """
-    def filterData(self, text):
-        # Declare that the displayed data is about to change, then do it
-        self.beginResetModel()
-        self._data = self._backend_data[self._backend_data['reduced'].str.contains(text.lower())]
-        self.endResetModel()"""
+    
+    def isConsoleUsed(self, console):
+        return console in self._backend_data["Console"].values
+    
+    def renameConsole(self, old, new):
+        # Replace the old console with the new
+        self._backend_data["Console"] = self._backend_data["Console"].replace({old:new})
+        
+        # Update the tableView
+        self.filterSortData()
+            
+        # Save the data
+        self._backend_data.to_csv(self.fileName, sep="$", header=True, index=False)
         
 
 class GamesList(QMainWindow):
@@ -286,13 +290,17 @@ class GamesList(QMainWindow):
         self.dialog.ui.comboBox_console.setCurrentText(row_elems[2].data())
         self.dialog.ui.comboBox_score.addItems(self.scores)
         self.dialog.ui.comboBox_score.setCurrentText(row_elems[3].data())
+        
+        # Add events
         self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
         self.dialog.ui.button_delete.clicked.connect(self.deleteGame)
         self.dialog.ui.button_update.clicked.connect(self.updateGame)
+        
         # Make the update button the default selected button
         self.dialog.ui.button_cancel.setAutoDefault(False)
         self.dialog.ui.button_delete.setAutoDefault(False)
         self.dialog.ui.button_update.setAutoDefault(True)
+        
         self.dialog.exec_()
     
     def deleteGame(self):
@@ -326,9 +334,67 @@ class GamesList(QMainWindow):
     # ----- Console Dialog Functions -----
     
     def openConsoleDialog(self):
-        #text = self.ui.lineEdit_search.text()
-        #self.tableModel.filterSortData(text=text)
-        return
+        self.dialog = QtWidgets.QDialog()
+        self.dialog.ui = editConsolesDialog()
+        self.dialog.ui.setupUi(self.dialog)
+        
+        # Populate fields
+        options = ['New console'] + self.consoles
+        self.dialog.ui.comboBox.addItems(options)
+        self.dialog.ui.comboBox.setCurrentText(options[0])
+        self.dialog.ui.lineEdit.setText(options[0])
+        
+        # Add events
+        self.dialog.ui.comboBox.currentIndexChanged.connect(self.consoleDialogIndexChanged)
+        self.dialog.ui.button_cancel.clicked.connect(self.dialog.close)
+        self.dialog.ui.button_delete.clicked.connect(self.deleteConsole)
+        self.dialog.ui.button_update.clicked.connect(self.updateConsole)
+        
+        # Make the update button the default selected button
+        self.dialog.ui.button_cancel.setAutoDefault(False)
+        self.dialog.ui.button_delete.setAutoDefault(False)
+        self.dialog.ui.button_update.setAutoDefault(True)
+        self.dialog.exec_()
+    
+    def consoleDialogIndexChanged(self):
+        self.dialog.ui.lineEdit.setText(self.dialog.ui.comboBox.currentText())
+        if self.dialog.ui.comboBox.currentIndex() == 0:
+            self.dialog.ui.button_delete.setEnabled(False)
+            self.dialog.ui.button_update.setText("Add console")
+        else:
+            self.dialog.ui.button_delete.setEnabled(True)
+            self.dialog.ui.button_update.setText("Update console")
+    
+    def deleteConsole(self):
+        console = self.dialog.ui.comboBox.currentText()
+        if self.tableModel.isConsoleUsed(console):
+            message = QMessageBox(text = "The selected console is still\n used by a game entry")
+            message.setWindowTitle("Error")
+            message.exec()
+        else:
+            self.consoles.remove(console)
+            self.dialog.close()
+    
+    def updateConsole(self):
+        console = self.dialog.ui.lineEdit.text()
+        index = self.dialog.ui.comboBox.currentIndex()
+        if index == 0:
+            if console in self.consoles:
+                message = QMessageBox(text = (console + " already exists"))
+                message.setWindowTitle("Error")
+                message.exec()
+            else:
+                self.consoles = sorted(self.consoles + [console])
+                with open('Consoles.txt', 'w') as f:
+                    f.write('\n'.join(self.consoles))
+                self.dialog.close()
+        else:
+            self.tableModel.renameConsole(self.consoles[index-1], console)
+            self.consoles[index-1] = console
+            with open('Consoles.txt', 'w') as f:
+                f.write('\n'.join(self.consoles))
+            self.dialog.close()
+            
     
     
     # ----- Search Functions -----

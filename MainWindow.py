@@ -74,6 +74,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.button_add.setText(_translate("MainWindow", "Add game"))
         self.button_edit.setText(_translate("MainWindow", "Edit selected game"))
-        self.button_consoles.setText(_translate("MainWindow", "Consoles"))
+        self.button_consoles.setText(_translate("MainWindow", "Edit consoles"))
         self.lineEdit_search.setPlaceholderText(_translate("MainWindow", "Seach game title"))
         self.button_clear.setText(_translate("MainWindow", "Clear search"))
