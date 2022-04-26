@@ -373,6 +373,10 @@ class GamesList(QMainWindow):
             message.exec()
         else:
             self.consoles.remove(console)
+            with open('Consoles.txt', 'w') as f:
+                for c in self.consoles:
+                    f.write(c)
+                    f.write('\n')
             self.dialog.close()
     
     def updateConsole(self):
@@ -386,13 +390,17 @@ class GamesList(QMainWindow):
             else:
                 self.consoles = sorted(self.consoles + [console])
                 with open('Consoles.txt', 'w') as f:
-                    f.write('\n'.join(self.consoles))
+                    for c in self.consoles:
+                        f.write(c)
+                        f.write('\n')
                 self.dialog.close()
         else:
             self.tableModel.renameConsole(self.consoles[index-1], console)
             self.consoles[index-1] = console
             with open('Consoles.txt', 'w') as f:
-                f.write('\n'.join(self.consoles))
+                for c in self.consoles:
+                    f.write(c)
+                    f.write('\n')
             self.dialog.close()
             
     
