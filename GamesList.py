@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import Qt, QModelIndex
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
@@ -101,7 +102,12 @@ class TableModel(QtCore.QAbstractTableModel):
             row = self._data.index[index.row()]
             
             # Check that title doesn't already exist among the other objects
-            if (value[0] in self._backend_data.Title.values[:row-1]) | \
+            # Special case for first item
+            if row == 0:
+                if value[0] in self._backend_data.Title.values[row+1:]:
+                    return "\"" + value[0] + "\" already exists."
+            # General case
+            elif (value[0] in self._backend_data.Title.values[:row-1]) | \
                 (value[0] in self._backend_data.Title.values[row+1:]):
                 return "\"" + value[0] + "\" already exists."
             if value[0].strip() == "":
@@ -194,9 +200,15 @@ class GamesList(QMainWindow):
         
         # Get data
         self.fileName = "Games.txt"
+        if not os.path.exists("Games.txt"):
+            self.generateGamesFile()
         data = pd.read_csv(self.fileName, sep = "$")
+        if not os.path.exists("Status.txt"):
+            self.generateStatusFile()
         self.status = [c[:-1] for c in open("Status.txt").readlines()]
         status_dict = dict(zip(self.status, list(range(len(self.status)))))
+        if not os.path.exists("Consoles.txt"):
+            self.generateConsolesFile()
         self.consoles = [c[:-1] for c in open("Consoles.txt").readlines()]
         self.scores = ["No score","10.0","9.5","9.0","8.5",
                        "8.0","7.5","7.0","6.5","6.0","5.5",
@@ -213,7 +225,7 @@ class GamesList(QMainWindow):
         self.ui.tableView.setColumnWidth(0, 327)
         self.ui.tableView.setColumnWidth(1, 95)
         self.ui.tableView.setColumnWidth(2, 95)
-        self.ui.tableView.setColumnWidth(3, 50)
+        self.ui.tableView.setColumnWidth(3, 55)
         self.ui.tableView.horizontalHeader().setSectionResizeMode(2) # Disable header drag
         self.ui.tableView.verticalHeader().setSectionResizeMode(2)
         self.ui.tableView.hideColumn(5)
@@ -234,6 +246,20 @@ class GamesList(QMainWindow):
         # Search bar
         self.ui.lineEdit_search.textChanged.connect(self.applyFilter)
     
+    
+    # ----- Generation Functions -----
+    
+    def generateGamesFile(self):
+        file = open('Games.txt', 'w')
+        file.write('Title$Status$Console$Score$reduced$categorized')
+        
+    def generateStatusFile(self):
+        file = open('Status.txt', 'w')
+        file.write('Playing\nTo do\nConsider\nDone\nDropped\n')
+    
+    def generateConsolesFile(self):
+        file = open('Consoles.txt', 'w')
+        file.write('PC\nMobile\n')        
     
     # ----- Column Sorting Functions -----
     
